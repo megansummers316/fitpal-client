@@ -4,4 +4,15 @@ export interface Exercise {
     intensity: string;
     duration: number;
     date: Date;
+    sets: ISet[];
+}
+
+//child data
+interface ISet {
+    _id: string;
+    reps: number;
+    setCount: number;
+    weight: number;
+    units: string;
+    restTime: number;
 }

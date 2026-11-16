@@ -1,3 +1,5 @@
+export const instant = false; //don't try pre-rending 
+
 import { Exercise } from "@/app/types/exercise";
 //import { useParams } from "next/navigation";
 
@@ -27,6 +29,23 @@ export default async function ExerciseDetails({ params }: { params: { id: string
             <h3>Intensity: {exercise.intensity}</h3>
             <h3>Duration: {exercise.duration}</h3>
             <h3>{new Date(exercise.date).toLocaleDateString()}</h3>
+
+            {/* child data - verify there is some first */}
+            {exercise.sets?.length > 0 &&
+                <>
+                    <h3>Sets</h3>
+                    <ul>
+                        {exercise.sets.map((set) => (
+                            <li key={set._id} className="card">
+                                <p>Reps: {set.reps}</p>
+                                <p>Weight: {set.weight}</p>
+                                <p>Units: {set.units}</p>
+                                {set.restTime && <p>Rest: {set.restTime}</p>}
+                            </li>
+                        ))} 
+                    </ul>
+                </>
+            }
         </main>
     )
 }
