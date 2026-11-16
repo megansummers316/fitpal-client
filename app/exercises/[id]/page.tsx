@@ -4,11 +4,15 @@ import { Exercise } from "@/app/types/exercise";
 //import { useParams } from "next/navigation";
 
 export default async function ExerciseDetails({ params }: { params: { id: string }}) {
+    
     //get id from url params
     const { id } = await params;
+    
+    //get server api url from env var
+    const apiDomain: string = process.env.NEXT_PUBLIC_API_DOMAIN!;
 
     //fetch selected doc from server api
-    const res: Response = await fetch(`http://localhost:4000/api/v1/exercises/${id}`);
+    const res: Response = await fetch(`${apiDomain}/exercises/${id}`);
 
     // const data = await res.json();
     // console.log(data);
