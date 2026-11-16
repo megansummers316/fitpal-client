@@ -105,5 +105,11 @@ fieldset {
 .error {
   color: firebrick;
   font-weight: bold;
-  margin-left: 25px;
+  margin-left: 15px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-left: 15px;
 }
