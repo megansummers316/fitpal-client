@@ -1,4 +1,4 @@
-export const intant = false;
+export const instant = false;
 
 import DeleteExerciseForm from "@/app/components/deleteExerciseForm"
 import { Exercise } from "@/app/types/exercise";

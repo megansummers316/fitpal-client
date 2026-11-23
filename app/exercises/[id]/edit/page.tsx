@@ -1,7 +1,7 @@
 import EditExerciseForm from "@/app/components/editExerciseForm"
 import { Exercise } from "@/app/types/exercise";
 
-export const intant = false;
+export const instant = false;
 
 export default async function EditExercisePage({ params }: { params: { id: string }}) {
     const {id} = await params;
