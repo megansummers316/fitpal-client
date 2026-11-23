@@ -12,7 +12,7 @@ export default async function ExerciseDetails({ params }: { params: { id: string
     const apiDomain: string = process.env.NEXT_PUBLIC_API_DOMAIN!;
 
     //fetch selected doc from server api
-    const res: Response = await fetch(`${apiDomain}/exercises/${id}`, {cache: "no-cache"});
+    const res: Response = await fetch(`${apiDomain}/exercises/${id}`, {cache: 'no-store'});
 
     // const data = await res.json();
     // console.log(data);

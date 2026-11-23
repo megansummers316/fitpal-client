@@ -4,6 +4,7 @@ import { Exercise } from "@/app/types/exercise";
 import { register } from "module";
 import { useForm, Controller } from "react-hook-form";
 import Exercises from "../exercises/page";
+import { useRouter } from "next/navigation";
 
 interface FormData {
     name: string;
@@ -17,6 +18,8 @@ type Props = {
 }
 
 export default function DeleteExerciseForm({ id, exercise }: Props) {
+    const router = useRouter();
+    
     //setup react-hook-form, populating default values from exercise prop passed from parent page
     const {register, handleSubmit, formState: { errors, isSubmitSuccessful }} = useForm<FormData>({
         defaultValues: {
@@ -37,7 +40,8 @@ export default function DeleteExerciseForm({ id, exercise }: Props) {
                     method: 'DELETE'
                 });
                 const apiResponse = await res.json();
-                console.log(apiResponse)
+                console.log(apiResponse);
+                router.push("/exercises");
             } catch (error: unknown) {
                 console.log(error);
             }
@@ -46,7 +50,7 @@ export default function DeleteExerciseForm({ id, exercise }: Props) {
 
     return (
         <>
-            {isSubmitSuccessful && <p className="success">Exercise Updated</p>}
+            {isSubmitSuccessful && <p className="success">Exercise Deleted</p>}
             <form onSubmit={(e) => {
                 e.preventDefault();
                 handleDelete(id);

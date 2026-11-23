@@ -12,7 +12,7 @@ export default function EditDeleteButtons({ id }: Props) {
     return (
         <>
             <Link href={`/exercises/${id}/edit`} className="button">Edit</Link>
-            <Link href={`/exercises/${id}/edit`} className="deleteButton">Delete</Link>
+            <Link href={`/exercises/${id}/delete`} className="deleteButton">Delete</Link>
         </>
     )
 }
