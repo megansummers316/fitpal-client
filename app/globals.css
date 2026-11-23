@@ -58,6 +58,10 @@ button, .button {
  border: none;
  margin: 0.25rem;
 }
+
+.deleteButton {
+  background-color: red;
+}
  
 button:hover {
  background-color: #1e40af;
