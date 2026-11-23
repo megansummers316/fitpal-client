@@ -27,6 +27,12 @@ export default function DeleteExerciseForm({ id, exercise }: Props) {
     });
 
     const handleDelete = async (id: string) => {
+        //confirmation before deleting
+        const confirmed = confirm("Are you sure you want to delete this exercise?");
+        if (!confirmed) {
+            return;
+        }
+
         try {
             const apiDomain: string = process.env.NEXT_PUBLIC_API_DOMAIN!;
             const res: Response = await fetch(`${apiDomain}/exercises/${id}`, {
