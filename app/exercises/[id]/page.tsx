@@ -3,8 +3,6 @@ export const instant = false; //don't try pre-rending
 import { Exercise } from "@/app/types/exercise";
 //import { useParams } from "next/navigation";
 
-export const intant = false;
-
 export default async function ExerciseDetails({ params }: { params: { id: string }}) {
     
     //get id from url params

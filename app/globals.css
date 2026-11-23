@@ -61,6 +61,14 @@ button, .button {
 
 .deleteButton {
   background-color: red;
+  font-weight: 700;
+ border-radius: 0.25rem;
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+ padding-left: 1rem;
+ padding-right: 1rem;
+ border: none;
+ margin: 0.25rem;
 }
  
 button:hover {
