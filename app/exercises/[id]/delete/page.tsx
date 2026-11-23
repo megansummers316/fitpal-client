@@ -3,7 +3,7 @@ export const intant = false;
 import DeleteExerciseForm from "@/app/components/deleteExerciseForm"
 import { Exercise } from "@/app/types/exercise";
 
-export default async function EditExercisePage({ params }: { params: { id: string }}) {
+export default async function DeleteExercisePage({ params }: { params: { id: string }}) {
     const {id} = await params;
     //fetch selected exercise from db using id in url
     const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN!;
