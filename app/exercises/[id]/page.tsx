@@ -3,6 +3,8 @@ export const instant = false; //don't try pre-rending
 import { Exercise } from "@/app/types/exercise";
 //import { useParams } from "next/navigation";
 
+export const intant = false;
+
 export default async function ExerciseDetails({ params }: { params: { id: string }}) {
     
     //get id from url params
@@ -12,7 +14,7 @@ export default async function ExerciseDetails({ params }: { params: { id: string
     const apiDomain: string = process.env.NEXT_PUBLIC_API_DOMAIN!;
 
     //fetch selected doc from server api
-    const res: Response = await fetch(`${apiDomain}/exercises/${id}`);
+    const res: Response = await fetch(`${apiDomain}/exercises/${id}`, {cache: "no-cache"});
 
     // const data = await res.json();
     // console.log(data);

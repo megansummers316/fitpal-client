@@ -3,6 +3,7 @@
 import { Exercise } from "@/app/types/exercise";
 import { register } from "module";
 import { useForm, Controller } from "react-hook-form";
+import Exercises from "../exercises/page";
 
 interface FormData {
     name: string;
@@ -10,13 +11,18 @@ interface FormData {
     duration: number;
 }
 
-export default function EditExerciseForm() {
-    //setup react-hook-form
+type Props = {
+    id: string;
+    exercise: Exercise;
+}
+
+export default function EditExerciseForm({ id, exercise }: Props) {
+    //setup react-hook-form, populating default values from exercise prop passed from parent page
     const {register, handleSubmit, formState: { errors, isSubmitSuccessful }} = useForm<FormData>({
         defaultValues: {
-            name: '',
-            intensity: '',
-            duration: 0
+            name: exercise.name,
+            intensity: exercise.intensity,
+            duration: exercise.duration
         }
     });
 
